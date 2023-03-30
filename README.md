@@ -11,6 +11,7 @@ Contains a good part of my config files.
 git clone https://github.com/sansugranes/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
+./install.sh
 ```
 
 ## Comes with
