@@ -31,3 +31,15 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- Toggle line wrapping for markdown files
+autocmd({"FileType"}, {
+    group = ThePrimeagenGroup,
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.wrap = true
+    end,
+})
+
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")

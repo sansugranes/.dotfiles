@@ -33,6 +33,7 @@ lsp.configure('lua-language-server', {
 })
 
 lsp.configure('laravel_dev_tools', {force_setup = true})
+lsp.configure('html-lsp', {filetypes = {'html-lsp', 'php'}})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -42,6 +43,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
+
 
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
@@ -81,3 +83,8 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+require('cmp').setup({
+  sources = {
+    { name = 'orgmode' }
+  }
+})
